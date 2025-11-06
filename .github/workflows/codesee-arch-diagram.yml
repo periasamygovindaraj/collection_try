@@ -1,18 +1,8 @@
-name: CI Pipeline
-
-on:
-  pull_request:
-    types:
-      - opened
-      - reopened
-      - synchronize
+name: Simple Echo
 
 jobs:
-  build:
+  echo_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Echo event info
-        run: echo "Running pipeline for PR #${{ github.event.pull_request.number }} triggered by ${{ github.event.action }}"
+      - name: Print message
+        run: echo "Hello from GitHub Actions!"
