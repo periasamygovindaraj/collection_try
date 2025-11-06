@@ -1,4 +1,4 @@
-package com.framework.collection;
+package com.framework.collection;//test
 
 public class Student {
 	String name;
