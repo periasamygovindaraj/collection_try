@@ -1,22 +1,18 @@
-# This workflow was added by CodeSee. Learn more at https://codesee.io/
-# This is v2.0 of this workflow file
+name: CI Pipeline
+
 on:
-  push:
-    branches:
-      - main
-  pull_request_target:
-    types: [opened, synchronize, reopened]
-
-name: CodeSee
-
-permissions: read-all
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
 
 jobs:
-  codesee:
+  build:
     runs-on: ubuntu-latest
-    continue-on-error: true
-    name: Analyze the repo with CodeSee
     steps:
-      - uses: Codesee-io/codesee-action@v2
-        with:
-          codesee-token: ${{ secrets.CODESEE_ARCH_DIAG_API_TOKEN }}
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Echo event info
+        run: echo "Running pipeline for PR #${{ github.event.pull_request.number }} triggered by ${{ github.event.action }}"
