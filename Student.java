@@ -5,7 +5,7 @@ public class Student {
 	int tamil;
 	int english;
 	int maths;
-	int science;
+	int science;//DS
 	int social;
 	
 	public Student(String name,int tamil,int english,int maths,int science,int social)
