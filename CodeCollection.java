@@ -1,5 +1,5 @@
 package com.framework.collection;
-import java.util.*;
+import java.util.*;//tests
 
 public class CodeCollection {
 
